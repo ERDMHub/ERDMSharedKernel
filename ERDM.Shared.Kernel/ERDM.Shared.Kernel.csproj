@@ -14,9 +14,16 @@
 		<Company>betalentech</Company>
 		<Description>Shared Kernel for ERDM Microservices</Description>
 
-		<!-- Optional but recommended -->
-		<PackageTags>sharedkernel;dotnet;microservices</PackageTags>
+		<!-- Metadata (IMPORTANT for NuGet quality) -->
+		<PackageTags>sharedkernel;dotnet;microservices;common</PackageTags>
 		<RepositoryUrl>https://github.com/ERDMHub/ERDMSharedKernel</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+
+		<!-- License -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+		<!-- README -->
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 
 		<!-- Build Settings -->
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -27,8 +34,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- FIX: Don't use old ASP.NET package -->
-		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+		<!-- Include README in package -->
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
