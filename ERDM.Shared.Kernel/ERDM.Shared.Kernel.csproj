@@ -1,13 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.9" />
-  </ItemGroup>
+		<!-- Code Quality -->
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- NuGet Package Info -->
+		<PackageId>ERDM.Shared.Kernel</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Bhagat</Authors>
+		<Company>betalentech</Company>
+		<Description>Shared Kernel for ERDM Microservices</Description>
+
+		<!-- Optional but recommended -->
+		<PackageTags>sharedkernel;dotnet;microservices</PackageTags>
+		<RepositoryUrl>https://github.com/ERDMHub/ERDMSharedKernel</RepositoryUrl>
+
+		<!-- Build Settings -->
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+		<!-- Symbols (debugging support) -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- FIX: Don't use old ASP.NET package -->
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+	</ItemGroup>
 
 </Project>
