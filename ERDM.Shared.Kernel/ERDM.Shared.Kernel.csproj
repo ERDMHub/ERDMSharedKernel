@@ -14,28 +14,31 @@
 		<Company>betalentech</Company>
 		<Description>Shared Kernel for ERDM Microservices</Description>
 
-		<!-- Metadata (IMPORTANT for NuGet quality) -->
+		<!-- Metadata -->
 		<PackageTags>sharedkernel;dotnet;microservices;common</PackageTags>
 		<RepositoryUrl>https://github.com/ERDMHub/ERDMSharedKernel</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 
-		<!-- License -->
+		<!-- License + README -->
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-
-		<!-- README -->
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 
 		<!-- Build Settings -->
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-		<!-- Symbols (debugging support) -->
+		<!-- Symbols -->
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
+	<!-- ASP.NET Core Support -->
 	<ItemGroup>
-		<!-- Include README in package -->
-		<None Include="README.md" Pack="true" PackagePath="\" />
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<!-- Include README from root -->
+	<ItemGroup>
+		<None Include="../README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
